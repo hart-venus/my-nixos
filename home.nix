@@ -72,14 +72,35 @@
     # EDITOR = "emacs";
   };
 
+  programs.zsh = {
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "git"
+        "nix"
+        "zsh-autocomplete"
+        "zsh-history-substring-search"
+        "zsh-autosuggestions"
+        "zsh-syntax-highlighting"
+      ];
+      theme = "agnoster";
+    };
+  };
+
   xdg.desktopEntries = {
     zen = {
       name = "Zen";
       genericName = "Web Browser";
       exec = "appimage-run /home/hart/AppImages/zen.AppImage";
       terminal = false;
-      categories = [ "Network" "WebBrowser" ];
-      mimeType = [ "text/html" "text/xml" ];
+      categories = [
+        "Network"
+        "WebBrowser"
+      ];
+      mimeType = [
+        "text/html"
+        "text/xml"
+      ];
     };
   };
 

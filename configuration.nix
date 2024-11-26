@@ -26,6 +26,10 @@
 
   ];
 
+  # Configuring zshell
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
   # Gaming
 
   programs.steam = {
@@ -108,6 +112,7 @@
   users.users.hart = {
     isNormalUser = true;
     description = "Ariel Leyva";
+    shell = pkgs.zsh;
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -144,6 +149,8 @@
     nil
     # general dev tools
     git
+    warp-terminal
+    kitty
 
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
