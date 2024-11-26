@@ -100,6 +100,9 @@
       plugins = [
         "git"
         "sudo"
+        "history-substring-search"
+        "zsh-syntax-highlighting"
+        "zsh-autosuggestions"
       ];
     };
   };

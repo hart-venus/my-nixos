@@ -16,7 +16,21 @@
     ./hardware-configuration.nix
   ];
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+  };
+  programs.zsh.ohMyZsh = {
+    enable = true;
+    theme = "agnoster";
+    plugins = [
+      "git"
+      "sudo"
+      "thefuck"
+      "history-substring-search"
+    ];
+  };
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -147,7 +161,7 @@
     git
     warp-terminal
     kitty
-    oh-my-zsh
+    thefuck
 
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
