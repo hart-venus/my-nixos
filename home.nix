@@ -72,20 +72,6 @@
     # EDITOR = "emacs";
   };
 
-  programs.zsh = {
-    oh-my-zsh = {
-      enable = true;
-      #plugins = [
-      #  "git"
-      #  "zsh-autocomplete"
-      #  "zsh-history-substring-search"
-      #  "zsh-autosuggestions"
-      #  "zsh-syntax-highlighting"
-      #];
-      theme = "agnoster";
-    };
-  };
-
   xdg.desktopEntries = {
     zen = {
       name = "Zen";
@@ -100,6 +86,23 @@
         "text/html"
         "text/xml"
       ];
+    };
+  };
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+    autocd = true;
+    enableVteIntegration = true;
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "git"
+        "sudo"
+      ];
+      theme = "agnoster";
     };
   };
 

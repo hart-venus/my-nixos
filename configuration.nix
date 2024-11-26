@@ -103,9 +103,10 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
+  environment.pathsToLink = [ "/share/zsh" ];
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.hart = {
+    shell = pkgs.zsh;
     isNormalUser = true;
     description = "Ariel Leyva";
     extraGroups = [
