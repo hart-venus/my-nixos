@@ -26,24 +26,6 @@
 
   ];
 
-  # Configuring zshell
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
-
-  programs.zsh = {
-    ohMyZsh = {
-      enable = true;
-      plugins = [
-        "git"
-        "zsh-autocomplete"
-        "zsh-history-substring-search"
-        "zsh-autosuggestions"
-        "zsh-syntax-highlighting"
-      ];
-      theme = "agnoster";
-    };
-  };
-
   # Gaming
 
   programs.steam = {
@@ -126,7 +108,6 @@
   users.users.hart = {
     isNormalUser = true;
     description = "Ariel Leyva";
-    shell = pkgs.zsh;
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -165,11 +146,6 @@
     git
     warp-terminal
     kitty
-    oh-my-zsh
-    oh-my-zsh.zsh-autocomplete
-    oh-my-zsh.zsh-history-substring-search
-    oh-my-zsh.zsh-autosuggestions
-    oh-my-zsh.zsh-syntax-highlighting
 
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget

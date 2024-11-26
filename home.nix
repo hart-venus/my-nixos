@@ -75,14 +75,13 @@
   programs.zsh = {
     oh-my-zsh = {
       enable = true;
-      plugins = [
-        "git"
-        "nix"
-        "zsh-autocomplete"
-        "zsh-history-substring-search"
-        "zsh-autosuggestions"
-        "zsh-syntax-highlighting"
-      ];
+      #plugins = [
+      #  "git"
+      #  "zsh-autocomplete"
+      #  "zsh-history-substring-search"
+      #  "zsh-autosuggestions"
+      #  "zsh-syntax-highlighting"
+      #];
       theme = "agnoster";
     };
   };
