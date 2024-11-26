@@ -3,7 +3,6 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.enableNixpkgsReleaseCheck = false;
   home.username = "hart";
   home.homeDirectory = "/home/hart";
 
@@ -90,22 +89,20 @@
   };
 
   programs.zsh = {
-    enable = true;
     enableCompletion = true;
-    autosuggestions.enable = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     autocd = true;
-    enableVteIntegration = true;
+    historySubstringSearch.enable = true;
     oh-my-zsh = {
       enable = true;
+      theme = "agnoster";
       plugins = [
         "git"
         "sudo"
       ];
-      theme = "agnoster";
     };
   };
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
