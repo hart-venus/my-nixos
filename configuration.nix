@@ -16,10 +16,18 @@
     ./hardware-configuration.nix
   ];
 
+  environment.sessionVariables = rec {
+    DEFAULT_USER = "hart";
+    EDITOR = "zeditor";
+  };
+
   programs.zsh = {
     enable = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
+    shellAliases = {
+      cd = "z";
+    };
   };
   programs.zsh.ohMyZsh = {
     enable = true;
@@ -161,8 +169,11 @@
     git
     warp-terminal
     kitty
+    kitty-themes
     thefuck
-
+    zoxide
+    # cool looking stuff
+    fastfetch
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
   ];

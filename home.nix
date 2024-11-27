@@ -87,25 +87,71 @@
       ];
     };
   };
-
-  programs.zsh = {
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    autocd = true;
-    historySubstringSearch.enable = true;
-    oh-my-zsh = {
-      enable = true;
-      theme = "agnoster";
-      plugins = [
-        "git"
-        "sudo"
-        "history-substring-search"
-        "zsh-syntax-highlighting"
-        "zsh-autosuggestions"
-      ];
-    };
-  };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.kitty = {
+    enable = true;
+    font.name = "Cartograph CF";
+    font.size = 18;
+    settings = {
+      background_opacity = "0.85";
+      confirm_os_window_close = 0;
+      foreground = "#a5979a";
+      background = "#242323";
+      selection_foreground = "#a5979a";
+      selection_background = "#373434";
+
+      cursor = "#e24f32";
+      cursor_text_color = "#242323";
+
+      url_color = "#dec9cc";
+
+      active_border_color = "#5a5354";
+      inactive_border_color = "#242323";
+      bell_border_color = "#674c50";
+      visual_bell_color = "none";
+
+      wayland_titlebar_color = "#373434";
+      macos_titlebar_color = "#373434";
+
+      active_tab_foreground = "#fbf9f9";
+      active_tab_background = "#242323";
+      inactive_tab_foreground = "#b9aeac";
+      inactive_tab_background = "#373434";
+      tab_bar_background = "#373434";
+      tab_bar_margin_color = "none";
+
+      mark1_foreground = "#242323";
+      mark1_background = "#7d5e63";
+      mark2_foreground = "#242323";
+      mark2_background = "#978a87";
+      mark3_foreground = "#242323";
+      mark3_background = "#ea5f43";
+
+      color0 = "#242323";
+      color8 = "#766b6c";
+
+      color1 = "#956f76";
+      color9 = "#ffa28f";
+
+      color2 = "#f8917c";
+      color10 = "#373434";
+
+      color3 = "#ffc8bd";
+      color11 = "#5a5354";
+
+      color4 = "#a7868b";
+      color12 = "#86797b";
+
+      color5 = "#f8917c";
+      color13 = "#dec9cc";
+
+      color6 = "#b89da2";
+      color14 = "#f77c64";
+
+      color7 = "#a5979a";
+      color15 = "#f0dbdf";
+    };
+  };
 }
