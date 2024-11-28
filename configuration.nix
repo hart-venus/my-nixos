@@ -159,7 +159,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     pkgs-unstable.anytype
-    pkgs-unstable.zed-editor
+    pkgs-unstable.zed-editor.fhs
     appimage-run
     # nix dev tools
     nixfmt-rfc-style
@@ -167,6 +167,7 @@
     nil
     # general dev tools
     git
+    nodejs_22
     warp-terminal
     kitty
     kitty-themes
@@ -174,7 +175,7 @@
     zoxide
     # cool looking stuff
     fastfetch
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    neovim
     #  wget
   ];
 
