@@ -68,8 +68,46 @@
   #  /etc/profiles/per-user/hart/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    NIXOS_OZONE_WL = "1";
   };
+
+  wayland.windowManager.hyprland.extraConfig = ''
+    monitor = eDP-1, 1920x1080@60, 1920x0, 1
+    monitor = HDMI-A-1, 1920x1080@60, 0x0, 1
+    xwayland {
+      force_zero_scaling = true
+    }
+    env = GDK_SCALE,1
+  '';
+
+  wayland.windowManager.hyprland.settings = {
+    "$mod" = "SUPER";
+    bind =
+      [
+        "$mod, F, exec, appimage-run ~/AppImages/zen.AppImage"
+        "$mod, T, exec, kitty"
+        ", Print, exec, grimblast copy area"
+      ]
+      ++ (
+        # workspaces
+        # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
+        builtins.concatLists (
+          builtins.genList (
+            i:
+            let
+              ws = i + 1;
+            in
+            [
+              "$mod, code:1${toString i}, workspace, ${toString ws}"
+              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+            ]
+          ) 9
+        )
+      );
+  };
+
+  # finally, hyprland
+  wayland.windowManager.hyprland.enable = true;
 
   xdg.desktopEntries = {
     zen = {

@@ -99,6 +99,13 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  # Enable Hyprland Window Manager
+  services.xserver.displayManager.gdm.wayland = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -161,6 +168,7 @@
     pkgs-unstable.anytype
     pkgs-unstable.zed-editor.fhs
     appimage-run
+    pkgs-unstable.discord
     # nix dev tools
     nixfmt-rfc-style
     nixd
