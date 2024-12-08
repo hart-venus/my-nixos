@@ -169,6 +169,7 @@
     pkgs-unstable.zed-editor.fhs
     appimage-run
     pkgs-unstable.discord
+    prismlauncher
     # nix dev tools
     nixfmt-rfc-style
     nixd
