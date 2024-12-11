@@ -109,6 +109,10 @@
   # finally, hyprland
   wayland.windowManager.hyprland.enable = true;
 
+  # direnv setup with zsh
+  programs.direnv.enable = true;
+  programs.direnv.enableZshIntegration = true;
+
   xdg.desktopEntries = {
     zen = {
       name = "Zen";
@@ -123,6 +127,17 @@
         "text/html"
         "text/xml"
       ];
+    };
+    cursor = {
+      name = "Cursor";
+      genericName = "Text Editor";
+      exec = "appimage-run /home/hart/AppImages/cursor.AppImage";
+      terminal = false;
+      categories = [
+        "Development"
+        "TextEditor"
+      ];
+      mimeType = [ "text/plain" ];
     };
   };
   # Let Home Manager install and manage itself.

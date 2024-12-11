@@ -162,13 +162,18 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # direnv setup
+  programs.direnv.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    pkgs-unstable.gnomeExtensions.bluetooth-battery
     pkgs-unstable.anytype
     pkgs-unstable.zed-editor.fhs
     appimage-run
+    python3
     pkgs-unstable.discord
+    libreoffice-qt6-fresh
     prismlauncher
     # nix dev tools
     nixfmt-rfc-style
