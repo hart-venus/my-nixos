@@ -181,6 +181,7 @@
     nil
     # general dev tools
     git
+    go
     nodejs_22
     warp-terminal
     kitty
@@ -190,6 +191,7 @@
     # cool looking stuff
     fastfetch
     neovim
+    obsidian
     #  wget
   ];
 
@@ -222,6 +224,11 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+  # gnome stop fucking sleeping
+  systemd.targets.sleep.enable = false;
+  systemd.targets.suspend.enable = false;
+  systemd.targets.hibernate.enable = false;
+  systemd.targets.hybrid-sleep.enable = false;
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
