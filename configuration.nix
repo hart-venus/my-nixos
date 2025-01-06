@@ -190,8 +190,12 @@
     zoxide
     # cool looking stuff
     fastfetch
+    openssl_3
     neovim
     obsidian
+    gimp
+    aseprite
+    brave
     #  wget
   ];
 
